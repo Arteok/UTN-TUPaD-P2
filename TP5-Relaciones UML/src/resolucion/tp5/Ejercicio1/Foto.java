@@ -3,6 +3,7 @@ package resolucion.tp5.Ejercicio1;
 
 // Clase Foto - Composición con Pasaporte
 public class Foto {
+
     private String imagen;
     private String formato;
 
@@ -15,13 +16,17 @@ public class Foto {
         return imagen;
     }
 
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
     public String getFormato() {
         return formato;
     }
 
-    @Override
-    public String toString() {
-        return "Foto [imagen=" + imagen + ", formato=" + formato + "]";
+    public void setFormato(String formato) {
+        this.formato = formato;
     }
+
 }
 

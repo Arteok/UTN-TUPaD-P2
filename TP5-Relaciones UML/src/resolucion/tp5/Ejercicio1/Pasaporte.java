@@ -3,25 +3,32 @@ package resolucion.tp5.Ejercicio1;
 
 // Clase Pasaporte - Composición con Foto, Asociación con Titular
 public class Pasaporte {
+
     private String numero;
     private String fechaEmision;
-    private Foto foto; // Composición
-    private Titular titular; // Asociación bidireccional
+    private Foto foto;
+    private Titular titular;
 
-    public Pasaporte(String numero, String fechaEmision, String imagenFoto, String formatoFoto, Titular titular) {
+    public Pasaporte(String numero, String fechaEmision, String imagen, String formato) {
         this.numero = numero;
         this.fechaEmision = fechaEmision;
-        this.foto = new Foto(imagenFoto, formatoFoto); // Composición: se crea dentro del pasaporte
-        this.titular = titular;
-        titular.setPasaporte(this); // Mantiene la bidireccionalidad
+        this.foto = new Foto(imagen, formato);
     }
 
     public String getNumero() {
         return numero;
     }
 
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
     public String getFechaEmision() {
         return fechaEmision;
+    }
+
+    public void setFechaEmision(String fechaEmision) {
+        this.fechaEmision = fechaEmision;
     }
 
     public Foto getFoto() {
@@ -32,10 +39,12 @@ public class Pasaporte {
         return titular;
     }
 
-    @Override
-    public String toString() {
-        return "Pasaporte [numero=" + numero + ", fechaEmision=" + fechaEmision +
-                ", foto=" + foto + ", titular=" + titular + "]";
+    public void setTitular(Titular titular) {
+        this.titular = titular;
+        if (titular != null && titular.getPasaporte() != this) {
+            titular.setPasaporte(this);
+        }
     }
+
 }
 
