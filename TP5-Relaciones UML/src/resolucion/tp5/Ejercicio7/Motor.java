@@ -1,0 +1,32 @@
+package resolucion.tp5.Ejercicio7;
+
+public class Motor {
+    private String tipo;
+    private String numeroSerie;
+
+    public Motor(String tipo, String numeroSerie) {
+        this.tipo = tipo;
+        this.numeroSerie = numeroSerie;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getNumeroSerie() {
+        return numeroSerie;
+    }
+
+    public void setNumeroSerie(String numeroSerie) {
+        this.numeroSerie = numeroSerie;
+    }
+
+    public void mostrarInfo() {
+        System.out.println("Motor: " + tipo + ", N° Serie: " + numeroSerie);
+    }
+}
+
