@@ -1,7 +1,6 @@
 
 package resolucion.tp5.Ejercicio1;
 
-// Clase Main para probar
 public class Main {
     public static void main(String[] args) {   
         
